@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Ticker Price</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Stock Ticker Price</h1>
+    <form action="/" method="post">
+      <input type="text" name="tickerInput" placeholder="Enter ticker symbol" />
+      <input type="submit" value="Submit" />
+    </form>
+    {% if stock_price %}
+      <div class="stock-price">
+        <h2>Stock Price:</h2>
+        <p>{{ stock_price }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
